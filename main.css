@@ -1,0 +1,724 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.sizeIncOnHover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.sizeIncOnHover:hover {
+  transform: scale(1.1);
+}
+.lightOnHoverimg {
+  transition: transform 0.5s ease-in-out; 
+}
+
+.lightOnHoverimg:hover {
+  
+  filter: brightness(1.9); 
+}
+
+/*downloaded fonts and added them as a variable*/
+@font-face {
+  font-family: "KumbhSans-Bold";
+  src: url(./fonts/KumbhSans-Bold.ttf);
+}
+@font-face {
+  font-family: "KumbhSans-Regular";
+  src: url(./fonts/KumbhSans-Regular.ttf);
+}
+
+
+/* adding color variable and font variable */
+:root {
+  --KumbhSansBold: "KumbhSans-Bold";
+  --KumbhSansRegular: "KumbhSans-Regular";
+  --font-size-body: 1.6rem;
+  --orange: hsl(26, 100%, 55%);
+  --light-orange: hsl(25, 100%, 94%);
+  --light-blue: hsl(219, 9%, 45%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --transparent-black: hsla(0, 0%, 0%, 0.65);
+}
+
+body {
+  font-size: var(--font-size-body);
+  font-family: var(--KumbhSansRegular);
+  background-color: var(--white);
+  min-height: 100vh;
+}
+
+.header {
+  padding: 2.4rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 1.6rem;
+}
+
+.navbar {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbarItems {
+  z-index: 1;
+  list-style-type: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.collapseMenu {
+  transform: translateX(-100%);
+}
+
+.navbarItems-wrapper {
+  padding: 2.4rem;
+  width: 24.4rem;
+  width: 65%;
+  max-width: 24.4rem;
+  height: 100%;
+  background-color: var(--white);
+}
+
+.navbarItems::after {
+  content: "";
+  flex-grow: 1;
+}
+
+.navbarItems-item:nth-child(2) {
+  margin-top: 5.7rem;
+}
+
+.navbarItems-item + .navbarItems-item {
+  margin-top: 3.1rem;
+}
+
+.navbarItems-item a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--black);
+  font-family: 'KumbhSans-Bold';
+}
+
+.cart-img {
+  display: flex;
+}
+
+
+.cart-img {
+  position: relative;
+  margin-left: auto;
+}
+
+.cart-img:hover {
+  cursor: pointer;
+}
+
+.cart-info {
+  z-index: 1;
+  border-radius: 12px;
+  padding: 2.3rem 0 0;
+  background-color: var(--white);
+  position: absolute;
+  box-shadow: 1px 1px 3px 0 var(--grayish-blue),
+    -1px 0 3px 0 var(--grayish-blue), 0 -1px 0 var(--white);
+  height: 25.7rem;
+  max-width: 35.6rem;
+  bottom: 0;
+  right: 1rem;
+  width: 95%;
+  transform: translateY(102%);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-title {
+  border-bottom: 1px solid var(--grayish-blue);
+  color: var(--black);
+  padding: 0 2.3rem 2rem;
+}
+
+.cart-info-description {
+  flex: 1;
+  position: relative;
+  padding: 2.4rem 2.3rem 3.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.empty-cart-image {
+  margin: 0 auto;
+}
+
+.cart-product-image {
+  width: 5.5rem;
+  height: 5.5rem;
+}
+
+.cart-product-name-container {
+  color: var(--light-blue);
+  margin-top: 0.2rem;
+  align-self: flex-start;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-product-quantity-container {
+  margin-top: 0.5rem;
+  display: flex;
+}
+
+.cart-product-quantity-container p + p {
+  margin-left: 0.4rem;
+}
+
+.cart-product-final-price {
+  color: var(--black);
+  font-family: var(--KumbhSansBold);
+  margin-left: 0.7rem !important;
+}
+
+.delete-icon {
+  align-self: center;
+}
+
+.checkout-btn {
+  width: 100%;
+  margin-top: 2.4rem;
+}
+
+.product-num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(50%) translateY(-50%);
+  border-radius: 50%;
+  font-size: 1.3rem;
+  width: 2rem;
+  height: 2rem;
+  color: var(--white);
+  background-color: var(--orange);
+  
+}
+
+.profile-img {
+  margin-left: 2.2rem;
+  outline: 2px solid transparent;
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: outline 0.2s ease;
+}
+
+.profile-img:hover {
+  outline-color: var(--orange);
+  cursor: pointer;
+}
+
+
+/*body content */
+.product-image-lists {
+  position: relative;
+  height: 30.75rem;
+  max-width: 37.5rem;
+  margin: 0 auto;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.productlist-image {
+  height: 30.75rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  transition: transform 1s ease;
+}
+
+.product-image {
+  height: 100%;
+  width: 100%;
+}
+
+.thumbnail-image {
+  background-color: var(--white);
+}
+
+.thumbnail-image img {
+  display: block;
+}
+
+.thumbnail-image--active {
+  border: 2px solid var(--orange);
+}
+
+.thumbnail-image.thumbnail-image--active img {
+  opacity: 0.4;
+}
+
+/*previous and next buttons*/
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  padding: 1.2rem 1.6rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-previous {
+  left: 0;
+  margin-left: 1.6rem;
+}
+
+.btn-next {
+  right: 0;
+  margin-right: 1.6rem;
+}
+
+.productdescription {
+  padding: 2.6rem 2.4rem 8.8rem;
+}
+
+.company {
+  font-size: 1.3rem;
+  font-family: var(--KumbhSansBold);
+  letter-spacing: 1.25px;
+  color: var(--light-blue);
+  text-transform: uppercase;
+}
+
+.sneaker-name {
+  margin-top: 1.5rem;
+  font-family: var(--KumbhSansBold);
+  font-size: 2.8rem;
+}
+
+.sneaker-description {
+  margin-top: 1.8rem;
+  color: var(--light-blue);
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+
+.productpricing {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.productfinal-price {
+  font-family: var(--KumbhSansBold);
+  font-size: 3rem;
+}
+
+.productdiscount {
+  padding: 6px 9px;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1.7rem;
+  font-family: var(--KumbhSansBold);
+  margin-left: 1.6rem;
+  margin-top: 1.6rem;
+  border-radius: 5px;
+}
+
+.productfirst-price {
+  font-family: var(--KumbhSansBold);
+  text-decoration: line-through;
+  margin-left: auto;
+  align-self: flex-start;
+  margin-top: 0.7rem;
+  color: var(--grayish-blue);
+}
+
+.productquantity {
+  border-radius: 8px;
+  margin-top: 2.3rem;
+  background-color: var(--white);
+  padding: 2.2rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  border: none;
+  width: 100%;
+  padding: 1.8rem 0;
+  border-radius: 10px;
+  display: inline-block;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--orange);
+}
+
+.productnumber{
+  font-family:var(--KumbhSansBold)
+}
+.add-to-cart-btn {
+  margin-top: 1.7rem;
+}
+
+.productquantity,
+.productpricing,
+.add-to-cart-btn {
+  max-width: 42.3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-to-cart-btn:hover,
+.productdecrease-btn:hover,
+.productincrease-btn:hover,
+.checkout-btn:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.add-to-cart-text {
+  margin-left: 1.5rem;
+  font-family: var(--KumbhSansBold);
+  color: var(--black);
+  font-size: 1.9rem;
+}
+.overdisplay {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--transparent-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.light-box-wrapper {
+  position: relative;
+}
+
+.close-light-box-btn {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-35px);
+}
+
+/* when size of screen is more than 1000px (Desktop view)*/
+
+@media (min-width: 1000px) {
+  .product {
+    padding-top: 2rem;
+  }
+
+  .product-gallery {
+    width: 70%;
+    max-width: 57.6rem;
+    margin: 2rem auto 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .product-image-lists {
+    margin: 0;
+    width: 50rem;
+    height: 45rem;
+  }
+
+  .productlist-image {
+    height: 45rem;
+  }
+
+  .small-image-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .thumbnail-image {
+    width: 8rem;
+    min-width: 5.3rem;
+    min-height: 5.3rem;
+  }
+
+  .thumbnail-image,
+  .thumbnail-image img {
+    border-radius: 10px;
+  }
+
+  .thumbnail-image + .thumbnail-image {
+    margin-top: 1rem;
+  }
+  .header {
+    padding: 2.4rem 2.4rem 2.5rem;
+    max-width: 110rem;
+    margin: 0 auto;
+  }
+
+  .header::after {
+    content: "";
+    height: 0.5px;
+    background-color: var(--grayish-blue);
+    width: calc(100% - 4.8rem);
+    position: absolute;
+    bottom: 0;
+  }
+
+  .menuBar {
+    display: none;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .navbar {
+    margin-left: 3.2rem;
+  }
+
+  .navbarItems {
+    position: static;
+  }
+
+  .navbarItems::after {
+    content: none;
+  }
+
+  .navbarItems-wrapper {
+    max-width: unset;
+    width: auto;
+    height: auto;
+    display: flex;
+  }
+
+  .navClose-btn {
+    display: none;
+  }
+
+  .navbarItems-item {
+    position: relative;
+  }
+
+  .navbarItems-item::after {
+    content: "";
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: var(--orange);
+    width: 100%;
+    transform: translateY(53px);
+  }
+
+  .navbarItems-item:hover a {
+    color: var(--black);
+    cursor: pointer;
+  }
+
+  .navbarItems-item:hover::after {
+    display: inline;
+  }
+
+  .navbarItems-item:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .navbarItems-item + .navbarItems-item {
+    margin-top: 0;
+    margin-left: 3.4rem;
+  }
+
+  .navbarItems-item a {
+    color: var(--light-blue);
+    font-family: var(--KumbhSansRegular);
+    font-size: 1.6rem;
+  }
+
+  .profile-img {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .cart-info {
+    max-width: 36.2rem;
+    right: -4rem;
+  }
+
+  .product {
+    padding: 8.8rem 0 13.1rem 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .productdescription {
+    padding: 6rem 2.4rem 8.8rem;
+    margin-left: 10rem;
+  }
+
+  .product-gallery {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 46.4rem;
+    width: 36.5rem;
+    margin: 0 0 0;
+  }
+
+  .product-image-lists {
+    border-radius: 17px;
+    margin: 0;
+    width: 100%;
+    height: 35.5rem;
+    max-width: unset;
+  }
+
+  .productlist-image {
+    border-radius: 17px;
+    height: 100%;
+  }
+
+  .product-image {
+    border-radius: 17px;
+  }
+
+  .lightbox-gallery {
+    width: 61.3vh;
+    height: 75.5vh;
+  }
+
+  .lightbox-gallery .product-image-lists {
+    height: 54.7rem;
+  }
+
+  .btn-container {
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top: 0;
+  }
+
+  .btn-container:hover {
+    cursor: pointer;
+    background-color: var(--white);
+  }
+
+  .btn-previous {
+    margin-left: 0;
+    left: 0;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  .btn-next {
+    right: 0;
+    margin-right: 0;
+    transform: translateY(-50%) translateX(50%);
+  }
+
+  .small-image-section {
+    margin-top: 3rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .thumbnail-image:hover img {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  .thumbnail-image + .thumbnail-image {
+    margin-top: 0;
+  }
+
+  .company,
+  .sneaker-name,
+  .sneaker-description {
+    text-align: left;
+  }
+
+  .company,
+  .sneaker-name,
+  .sneaker-description {
+    max-width: 44.5rem;
+  }
+
+  .wrapper {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .productquantity {
+    width: 28rem;
+    margin-right: 2rem;
+  }
+
+  .add-to-cart-btn {
+    padding: 2rem 0;
+    margin-top: 2.2rem;
+  }
+
+  .lightbox-gallery .small-image-section {
+    margin-top: 3rem;
+    flex-direction: row;
+    justify-content: space-between;
+
+    justify-content: center;
+  }
+
+  .lightbox-gallery .thumbnail-image + .thumbnail-image {
+    margin-top: 0;
+
+    margin-left: 4rem;
+  }
+  
+} 
+
+.hidden {
+  display: none;
+}

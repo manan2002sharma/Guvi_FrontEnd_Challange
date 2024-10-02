@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Guvi Assignment 4</title>
+
+    <link rel="stylesheet" href="main.css" />
+    </head>
+  <body>
+    <header class="header">
+      <img src="./images/icon-menu.svg" alt="#" class="menuBar sizeIncOnHover" />
+      <img src="./images/logo.svg" alt="logo" class="logo" />
+
+      <!--navbar-->
+      <nav class="navbar">
+        <div class="navbarItems collapseMenu">
+          <div class="navbarItems-wrapper">
+            <img
+              src="./images/icon-close.svg"
+              alt="close navbar"
+              class="navClose-btn"
+            />
+
+            <div class="navbarItems-item sizeIncOnHover">
+              <a href="#">Collections</a>
+            </div>
+
+            <div class="navbarItems-item sizeIncOnHover">
+              <a href="#"> Men</a>
+            </div>
+
+            <div class="navbarItems-item sizeIncOnHover">
+              <a href="#"> Women</a>
+            </div>
+
+            <div class="navbarItems-item sizeIncOnHover">
+              <a href="#"> About </a>
+            </div>
+
+            <div class="navbarItems-item sizeIncOnHover">
+              <a href="#"> Contact </a>
+            </div>
+          </div>
+        </div>
+        <span class="cart-img sizeIncOnHover">
+          <img src="./images/icon-cart.svg" alt="#" />
+          <p class="product-num hidden">0</p>
+        </span>
+
+        <img
+          src="./images/image-avatar.png"
+          class="profile-img"
+          alt="profile image"
+        />
+      </nav>
+
+      <div class="cart-info hidden">
+        <h3 class="cart-title">Cart</h3>
+
+        <div class="cart-info-description">
+          <p class="empty-cart-image">Your cart is empty</p>
+        </div>
+      </div>
+    </header>
+
+    <!--body content-->
+    <main class="product">
+      <div class="product-gallery">
+        <div class="product-image-lists">
+          <div class="productlist-image products">
+            <img
+              src="./images/image-product-1.jpg"
+              alt="product image"
+              class="product-image"
+            />
+          </div>
+
+          <div class="productlist-image products">
+            <img
+              src="./images/image-product-2.jpg"
+              alt="product image"
+              class="product-image"
+            />
+          </div>
+
+          <div class="productlist-image products">
+            <img
+              src="./images/image-product-3.jpg"
+              alt="product image"
+              class="product-image"
+            />
+          </div>
+
+          <div class="productlist-image products">
+            <img
+              src="./images/image-product-4.jpg"
+              alt="product image"
+              class="product-image"
+            />
+          </div>
+
+          <span class="btn-container btn-previous">
+          
+            <img
+              src="./images/icon-previous.svg"
+              alt="button to move to the previous product image "
+              class="btn-arrow "
+            />
+          </span>
+
+          <span class="btn-container btn-next ">
+            <img
+              src="./images/icon-next.svg"
+              alt="button to move to the next product image button"
+              class="btn-arrow "
+            />
+          </span>
+        </div>
+        <ul class="small-image-section hidden"></ul>
+      </div>
+      <div class="overdisplay hidden">
+        <div class="light-box-wrapper">
+          <img
+            src="./images/icon-close.svg"
+            alt="close navbar"
+            class="close-light-box-btn lightOnHoverimg"
+          />
+
+          <!--Images for lightbox-->
+          <div class="product-gallery lightbox-gallery">
+            <div class="product-image-lists lightbox-gallery__image-lists">
+              <div class="productlist-image lightbox-gallery__product">
+                <img
+                  src="./images/image-product-1.jpg"
+                  alt="product image"
+                  class="product-image"
+                />
+              </div>
+
+              <div class="productlist-image lightbox-gallery__product">
+                <img
+                  src="./images/image-product-2.jpg"
+                  alt="product image"
+                  class="product-image"
+                />
+              </div>
+
+              <div class="productlist-image lightbox-gallery__product">
+                <img
+                  src="./images/image-product-3.jpg"
+                  alt="product image"
+                  class="product-image"
+                />
+              </div>
+
+              <div class="productlist-image lightbox-gallery__product">
+                <img
+                  src="./images/image-product-4.jpg"
+                  alt="product image"
+                  class="product-image"
+                />
+              </div>
+            </div>
+            <ul class="small-image-section hidden"></ul>
+          </div>
+
+          <span class="btn-container btn-previous lightOnHoverimg">
+            <img
+              src="./images/icon-previous.svg"
+              alt="button to move to the previous product image "
+              class="btn-arrow lightOnHoverimg"
+            />
+          </span>
+          <span class="btn-container btn-next lightOnHoverimg">
+            <img
+              src="./images/icon-next.svg"
+              alt="button to move to the next product image button"
+              class="btn-arrow lightOnHoverimg"
+            />
+          </span>
+        </div>
+      </div>
+
+      <div class="productdescription">
+        <h1 class="company">Sneaker Company</h1>
+
+        <h2 class="sneaker-name">Fall Limited Edition Sneakers</h2>
+
+        <p class="sneaker-description">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+
+        <div class="productpricing">
+          <p class="productfinal-price">$125.00</p>
+          <p class="productdiscount">50%</p>
+          <p class="productfirst-price">$250.00</p>
+        </div>
+
+        <div class="wrapper">
+          <div class="productquantity">
+            <img
+              src="./images/icon-minus.svg"
+              alt="decrease the number of product"
+              class="productdecrease-btn"
+            />
+
+            <p class="productnumber">0</p>
+
+            <img
+              src="./images/icon-plus.svg"
+              alt="increase the number of product"
+              class="productincrease-btn"
+            />
+          </div>
+          <button class="btn add-to-cart-btn">
+            <img src="./images/icon-cart.svg" alt=""  />
+            <p class="add-to-cart-text">Add to cart</p>
+          </button>
+        </div>
+      </div>
+    </main>
+    
+    <script  src="script.js"></script>
+  </body>
+</html>
